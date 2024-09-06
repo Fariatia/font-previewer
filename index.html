@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font Previewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+      background-color: rgba(141, 243, 229, 0.623);
+    }
+    input, select {
+      padding: 10px;
+      margin: 10px;
+      width: 300px;
+      background-color: antiquewhite;
+    }
+    #output {
+      margin-top: 20px;
+      font-size: 36px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Font Previewer</h2>
+  <input type="text" id="textInput" placeholder="Type your text here" oninput="updateText()">
+  <select id="fontSelect" onchange="updateText()">
+    <option value="Arial">Arial</option>
+    <option value="Georgia">Georgia</option>
+    <option value="Verdana">Verdana</option>
+    <option value="Courier New">Courier New</option>
+    <option value="Times New Roman">Times New Roman</option>
+  </select>
+
+  <div id="output">Your font will display here</div>
+
+  <script>
+    function updateText() {
+      const text = document.getElementById('textInput').value;
+      const font = document.getElementById('fontSelect').value;
+      const output = document.getElementById('output');
+      output.textContent = text;
+      output.style.fontFamily = font;
+    }
+  </script>
+
+</body>
+</html>
